@@ -1,23 +1,50 @@
 {
-  "name": "ReposOfOurLives",
+  "name": "repos-of-our-lives",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Repos of Our Lives",
+  "keywords": [
+    "extensions",
+    "Azure DevOps",
+    "Visual Studio Team Services"
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WikkaLab/ReposOfOurLives.git"
+    "url": ""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WikkaLab/ReposOfOurLives/issues"
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "compile": "npm run clean && webpack --mode production",
+    "compile:dev": "npm run clean && webpack --mode development",
+    "build": "npm run compile",
+    "build:dev": "npm run compile:dev && npm run postbuild",
+    "postbuild": "npm run package-extension -- --rev-version",
+    "package-extension": "tfx extension create --manifest-globs azure-devops-extension.json src/Samples/**/*.json",
+    "publish-extension": "tfx extension publish --manifest-globs azure-devops-extension.json src/Samples/**/*.json"
   },
-  "homepage": "https://github.com/WikkaLab/ReposOfOurLives#readme",
   "dependencies": {
-    "vss-web-extension-sdk": "^5.141.0"
+    "azure-devops-extension-api": "~1.157.0",
+    "azure-devops-extension-sdk": "~2.0.11",
+    "azure-devops-ui": "~2.164.0",
+    "react": "~16.8.1",
+    "react-dom": "~16.8.1",
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "~16.8.2",
+    "@types/react-dom": "~16.8.0",
+    "base64-inline-loader": "^1.1.1",
+    "copy-webpack-plugin": "^4.5.4",
+    "css-loader": "~1.0.0",
+    "file-loader": "~2.0.0",
+    "node-sass": "~4.12.0",
+    "rimraf": "~2.6.2",
+    "sass-loader": "~7.1.0",
+    "style-loader": "~0.23.1",
+    "tfx-cli": "^0.6.3",
+    "ts-loader": "~5.2.2",
+    "typescript": "^2.9.2",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
   }
 }

@@ -1,13 +1,16 @@
 {
     "manifestVersion": 1,
     "id": "repos-of-our-lives",
-    "publisher": "",
-    "version": "1.0.0",
+    "publisher": "ElenaDotNet",
+    "version": "0.1.2",
     "name": "Repos of Our Lives",
     "description": "An Azure DevOps extension to manage repositories",
-    "public": false,
     "categories": [
-        "Azure Repos"
+        "Azure Repos",
+        "Azure Boards",
+        "Azure Pipelines",
+        "Azure Test Plans",
+        "Azure Artifacts"
     ],
     "targets": [
         {
@@ -16,26 +19,29 @@
     ],
     "contributions": [
         {
-            "id": "my-hub",
+            "id": "repos-of-our-lives",
             "type": "ms.vss-web.hub",
             "targets": [
                 "ms.vss-code-web.code-hub-group"
-            ],
-            "properties": {
-                "name": "Repos of Our Lives",
-                "uri": "my-repos.html"
-            }
+            ]
         }
     ],
+    "icons": {
+        "default": "logo.png"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
     "files": [
         {
-            "path": "my-repos.html",
+            "path": "static",
             "addressable": true
         },
         {
-            "path": "node_modules/vss-web-extension-sdk/lib",
-            "addressable": true,
-            "packagePath": "lib"
+            "path": "dist",
+            "addressable": true
         }
     ]
 }
