@@ -25,10 +25,13 @@
   "dependencies": {
     "azure-devops-extension-api": "~1.157.0",
     "azure-devops-extension-sdk": "~2.0.11",
+    "azure-devops-node-api": "^10.2.1",
     "azure-devops-ui": "~2.164.0",
+    "azure-pipelines-task-lib": "^3.1.0",
     "react": "~16.8.1",
     "react-dom": "~16.8.1",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "vss-web-extension-sdk": "^1.104.0"
   },
   "devDependencies": {
     "@types/react": "~16.8.2",

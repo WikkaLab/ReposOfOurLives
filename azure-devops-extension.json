@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "repos-of-our-lives",
     "publisher": "ElenaDotNet",
-    "version": "0.1.2",
+    "version": "0.1.7",
     "name": "Repos of Our Lives",
     "description": "An Azure DevOps extension to manage repositories",
     "categories": [
